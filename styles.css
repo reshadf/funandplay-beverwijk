@@ -472,6 +472,37 @@ h1, h2, h3, h4 {
     animation: pulse 2s infinite;
 }
 
+/* TikTok Section */
+.tiktok-section {
+    padding: 100px 0;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.tiktok-profile-embed {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    max-width: 780px;
+}
+
+.tiktok-embed-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.tiktok-cta {
+    margin-top: 2rem;
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 0;
