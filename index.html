@@ -272,7 +272,15 @@
         </div>
     </footer>
 
-    <script async src="https://www.tiktok.com/embed.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Load TikTok embed after our script to avoid interference
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.src = 'https://www.tiktok.com/embed.js';
+            s.async = true;
+            document.body.appendChild(s);
+        });
+    </script>
 </body>
 </html>

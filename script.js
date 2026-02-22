@@ -158,20 +158,24 @@ contactForm.addEventListener('submit', function(e) {
     submitBtn.textContent = 'Verzenden...';
     submitBtn.disabled = true;
 
+    const encodedData = new URLSearchParams(formData).toString();
+
     fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: encodedData
     })
     .then(response => {
         if (response.ok) {
             contactForm.reset();
             showNotification('Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.', 'success');
         } else {
+            console.error('Form submission failed:', response.status, response.statusText);
             showNotification('Er is iets misgegaan. Probeer het later opnieuw.', 'error');
         }
     })
-    .catch(() => {
+    .catch(error => {
+        console.error('Form submission error:', error);
         showNotification('Er is iets misgegaan. Probeer het later opnieuw.', 'error');
     })
     .finally(() => {
